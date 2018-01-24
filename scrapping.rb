@@ -23,10 +23,11 @@ def get_the_email_of_a_townhall_from_its_webpage(url)
     elements = page.css('td p font')
     elements.each do |el|
       if el.text.include?('@')
-          puts el.text
+          town_email = el.text
+          puts town_email
           town_name = page.css('strong .lientxt4').inner_html
           puts town_name
-          town_hash.push(name = town_name)
+          # town_hash.push(name = town_name)
       end
     end
   end
